@@ -4,12 +4,13 @@ from socket import *
 # In order to terminate the program
 import sys
 from threading import *
+import threading
 
 class ClientThread(Thread):
-    def __init__(self, socket):
+    def __init__(self, connectionSocket):
         Thread.__init__(self)
-        self.connectionSocket = socket
-        print("New server socket thread created")
+        #self.connectionSocket = socket
+        print("New server socket thread created" + str(threading.get_native_id()))
     
     def run(self):
         try:
@@ -52,7 +53,7 @@ serverSocket.listen(4)
 while True:
     # Establish the connection
     print('Ready to serve...')
-    connectionSocket = serverSocket.accept()
+    connectionSocket, addr = serverSocket.accept()
     newthread = ClientThread(connectionSocket)
     newthread.start()
     threads.append(newthread)
