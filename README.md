@@ -9,7 +9,7 @@
 webserver1.py is a webserver built with socket programming and TCP connections in Python. this webserver serves a simple
 HelloWorld.html file that simply outputs "Hello World." If anything but http://[local_ip_adress]/HelloWorld.html is
 entered into a webbrower, the web server will return a 404 Not Found. webserver2.py does the same thing, but is multithreaded
-so that more than one request can be found.
+so that more than one request can be served at a time.
 
 ### NOTES, KNOWN BUGS, AND/OR INCOMPLETE PARTS
 
@@ -32,8 +32,7 @@ https://docs.python.org/2.7/howto/sockets.html?highlight=socket
 3. Open your browser and enter this into the : http://128.238.251.26:960/HelloWorld.html 
    where the IP address is the address of the host running the server. On Mac, this can be found
    by navigating to system preferences > network. We chose port 960, so use port 960. 
-4. The "HelloWorld.html" file should be displayed on your browser. If the proper address was not used, 
-   the server will return a 404 Not Found error. 
+4. The "HelloWorld.html" file should be displayed on your browser. If any other file not present on the server is requested, the server will return a 404 Not Found error. 
 
 ### SUBMISSION
 
@@ -41,8 +40,8 @@ I have done this assignment completely on my own. I have not copied it, nor have
 
 By signing my name below and submitting the project, I confirm the above statement is true and that I have followed the course guidelines and policies.
 
-Submission date:
+Submission date: October 10, 2022
 
 Team member 1 name: Casey Brugna
 
-Team member 2 name: Armaan Gil
+Team member 2 name: Armaan Gill
